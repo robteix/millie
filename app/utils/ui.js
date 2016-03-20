@@ -356,7 +356,7 @@ export function makeMenus(services, selectService) {
     ];    
 
 
-    let menu = Menu.buildFromTemplate(template);
+    let menu = Menu.buildFromTemplate(menuTemplate);
     mainWindow.setMenu(menu);
     Menu.setApplicationMenu(menu);
   }
