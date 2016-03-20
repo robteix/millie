@@ -6,10 +6,11 @@ import {selectService} from '../actions/talky';
 
 const ipcRenderer = require('electron').ipcRenderer;
 
+// setBadge sets the icon unread badge. For now this
+// only works on OSX. 
 export function setBadge(unread) {
   let text = '';
   if (unread > 0) text = ''+unread;
-  console.log('set-badge', text);
   ipcRenderer.sendSync('set-badge', text);
 }
 
