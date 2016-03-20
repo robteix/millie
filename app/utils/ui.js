@@ -227,46 +227,103 @@ export function makeMenus(services, selectService) {
     let menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
   } else {
-    template = [{
+
+    /************
+     *   WINDOWS AND LINUX
+     ************/ 
+    let fileMenu = {
       label: '&File',
       submenu: [{
-        label: '&Open',
-        accelerator: 'Ctrl+O'
-      }, {
-        label: '&Close',
-        accelerator: 'Ctrl+W',
+        label: 'Close',
+        accelerator: 'Alt+F4',
         click() {
-          mainWindow.close();
+          app.quit();
         }
       }]
-    }, {
-      label: '&View',
+    };
+    let editMenu = {
+      label: 'Edit',
+      submenu: [{
+        label: 'Undo',
+        accelerator: 'Control+Z',
+        selector: 'undo:'
+      }, {
+        label: 'Redo',
+        accelerator: 'Shift+Control+Z',
+        selector: 'redo:'
+      }, {
+        type: 'separator'
+      }, {
+        label: 'Cut',
+        accelerator: 'Control+X',
+        selector: 'cut:'
+      }, {
+        label: 'Copy',
+        accelerator: 'Control+C',
+        selector: 'copy:'
+      }, {
+        label: 'Paste',
+        accelerator: 'Control+V',
+        selector: 'paste:'
+      }, {
+        label: 'Select All',
+        accelerator: 'Control+A',
+        selector: 'selectAll:'
+      }]
+    };
+    let viewMenu = {
+      label: 'View',
       submenu: (process.env.NODE_ENV === 'development') ? [{
-        label: '&Reload',
-        accelerator: 'Ctrl+R',
+        label: 'Reload',
+        accelerator: 'Control+R',
         click() {
           mainWindow.restart();
         }
       }, {
-        label: 'Toggle &Full Screen',
-        accelerator: 'F11',
+        label: 'Toggle Full Screen',
+        accelerator: 'Ctrl+Control+F',
         click() {
           mainWindow.setFullScreen(!mainWindow.isFullScreen());
         }
       }, {
-        label: 'Toggle &Developer Tools',
-        accelerator: 'Alt+Ctrl+I',
+        label: 'Toggle Developer Tools',
+        accelerator: 'Alt+Control+I',
         click() {
           mainWindow.toggleDevTools();
         }
       }] : [{
-        label: 'Toggle &Full Screen',
-        accelerator: 'F11',
+        label: 'Toggle Full Screen',
+        accelerator: 'Ctrl+Control+F',
         click() {
           mainWindow.setFullScreen(!mainWindow.isFullScreen());
         }
       }]
-    }, {
+    };
+
+  let servicesMenu = [{
+    label: 'Talky',
+      accelerator: 'Control+1',
+      click() {
+        selectService('talky');
+      }
+    }];
+  let c = 2;
+  for (let key of Object.keys(services)) {
+    let s = services[key];
+      if (c > 9) break;
+      servicesMenu.push({
+          label: s.title,
+          accelerator: 'Control+'+c++,
+          click() {
+            selectService(s.id);
+          }
+      });
+    }
+    if (servicesMenu.length > 0) {
+      viewMenu.submenu.push({'type':'separator'}, ...servicesMenu);
+    }
+
+    let helpMenu = {
       label: 'Help',
       submenu: [{
         label: 'Learn More',
@@ -289,8 +346,17 @@ export function makeMenus(services, selectService) {
           shell.openExternal('https://github.com/atom/electron/issues');
         }
       }]
-    }];
-    menu = Menu.buildFromTemplate(template);
+    };
+
+    let menuTemplate = [
+      fileMenu,
+      editMenu,
+      viewMenu,
+      helpMenu,
+    ];    
+
+
+    let menu = Menu.buildFromTemplate(template);
     mainWindow.setMenu(menu);
     Menu.setApplicationMenu(menu);
   }
