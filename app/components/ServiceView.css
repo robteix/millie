@@ -1,0 +1,12 @@
+.serviceView {
+	display: flex;
+    flex-grow: 1;
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+   width: 2000px !important;
+   height: 2000px !important;
+}

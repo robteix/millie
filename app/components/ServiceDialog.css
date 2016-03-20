@@ -1,0 +1,191 @@
+.mainOverlay {    
+	position: fixed;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    z-index: 1500;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: left 0ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    padding-top: 91.5px;
+}
+
+.modalOverlay {
+	position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.54);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    will-change: opacity;
+    transform: translateZ(0);
+    transition: left 0ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 400ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    z-index: 1400;
+}
+
+.dialogOverlay {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    position: relative;
+    width: 75%;
+    max-width: 768px;
+    margin: 0px auto;
+    z-index: 1500;
+    opacity: 1;
+    transform: translate3d(0px, 64px, 0px);
+}
+
+.dialog {
+	background-color: #ffffff;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-shadow: 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22);
+    border-radius: 8px 8px;
+    background: #ffffff;
+}
+
+.narrow {
+	max-width: 500px;
+}
+
+.dialog h1 {
+    margin: 0;
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 102, 0, 1);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    border-radius: 8px 8px 0 0;
+}
+
+.dialogContent {
+    padding: 24px;
+    overflow: hidden;
+    max-height: 207px;
+}
+
+.dialogControls {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    padding: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.dialogControls button {
+    border: 1px solid;
+    box-sizing: border-box;
+    display: inline-block;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    transform: translate3d(0px, 0px, 0px);
+    color: rgb(0, 188, 212);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    font-size: 14px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    line-height: 36px;
+    min-width: 88px;
+    padding: 0px;
+    margin: 0px;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    background: none rgba(0, 0, 0, 0);
+    margin-left: 8px;
+}
+
+.dialogControls button:hover {
+	background: none rgba(0, 188, 212,0.3);
+}
+
+
+.dialogControls button:active {
+	background: none rgba(153,153,153,0.4);
+}
+
+.dialogControls button.primary:hover {
+	background: none rgba(255, 102, 0,0.4);
+}
+
+
+.dialogControls button.primary:active {
+	background: none rgba(153,153,153,0.4);
+}
+
+button.primary {
+	color: rgb(255, 102, 0);
+}
+
+button.delete {
+    color: rgb(255, 0, 0);
+}
+
+.dialogControls button.delete:hover {
+    background: none rgba(255, 0, 0,0.4);
+}
+
+
+.dialogControls button.delete:active {
+    background: none rgba(153,153,153,0.4);
+}
+.fieldLine {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+}
+
+.input {
+	margin-left: 10px;
+	display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.fieldLabel {
+	color: rgb(255, 102, 0);
+	width: auto;
+	padding-top: 4px;
+	font-size: large;
+}
+
+.titleInput {
+	display: inline-block;
+	width: 100%;
+	outline: none;
+	border-width: 1px 1px 1px 1px;
+	border-radius: 4px;
+	border-color: rgb(255, 102, 0);
+    color: rgb(255, 102, 0);
+	padding: 4px;
+	border-style: solid;
+	font-size: large;
+}
+
+.error {
+	color: red;
+	font-size: smaller;
+	padding-top: 4px;
+}

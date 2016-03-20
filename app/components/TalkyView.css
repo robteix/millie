@@ -1,0 +1,157 @@
+.talkyView {
+	display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    /* padding-top: 64px; */
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+   width: 2000px !important;
+   height: 2000px !important;
+}
+
+.content {
+	display: inline-block;
+	width: 75%;
+	max-width: 750px;
+	min-width: 256px;
+	margin: 10px auto;	
+}
+
+.content h1 {
+	font-size: x-large;
+	color: white;
+}
+
+.activeService {
+	border: 1px solid orange;
+	border-radius: 16px;
+	padding: 16px;
+	color: orange;
+	background-color: rgba(0,0,0,0);
+	margin-bottom: 8px;
+	display: flex;
+	flex-direction: row;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.activeService:hover {
+	background-color: rgba(255, 102, 0, 0.4);
+}
+
+.activeService:active {
+	background-color: rgba(255, 102, 0, 0.6);
+}
+
+.activeService label {
+	font-size: large;
+	margin-left: 8px;
+}
+
+.activeService img {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-top: -4px;
+}
+
+.activeService i {
+	vertical-align: middle;
+	margin-top: 2px;
+	font-size: larger;
+	cursor: pointer;
+}
+
+.activeService i:hover {
+	color: rgba(255,0,0,1);
+}
+
+.activeService i:active {
+	color: rgba(255,0,0,0.6);
+}
+
+.addServiceContainer {
+	display: flex;
+	width: 100%;
+	max-width: 750px;
+	min-width: 256px;
+	margin: 10px auto;	
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.content h1 {
+	font-size: x-large;
+	color: white;
+}
+
+.addService {
+	border: 1px solid orange;
+	border-radius: 16px;
+	padding: 16px;
+	color: orange;
+	background-color: rgba(0,0,0,0);
+	margin-bottom: 8px;
+	display: flex;
+	flex-direction: row;
+	flex-basis: 45%;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+@media screen and (max-width: 960px){
+	.addService {
+		flex-basis: 44%;
+	}
+}
+
+@media screen and (max-width: 830px){
+	.addService {
+		flex-basis: 42%;
+	}
+}
+
+@media screen and (max-width: 630px){
+	.addService {
+		flex-basis: 100%;
+	}
+}
+.addService:hover {
+	background-color: rgba(255, 102, 0, 0.4);
+}
+
+.addService:active {
+	background-color: rgba(255, 102, 0, 0.6);
+}
+
+.addService label {
+	font-size: large;
+	margin-left: 8px;
+}
+
+.addService img {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-top: -4px;
+}
+
+.addService i {
+	vertical-align: middle;
+	margin-top: 2px;
+	font-size: larger;
+	cursor: pointer;
+}
+
+.addService i:hover {
+	color: rgba(255,0,0,1);
+}
+
+.addService i:active {
+	color: rgba(255,0,0,0.6);
+}

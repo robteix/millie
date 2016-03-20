@@ -1,0 +1,99 @@
+.container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  flex: 1 1;
+  flex-direction: column;
+  display: flex;
+}
+
+.container h2 {
+  font-size: 5rem;
+} 
+
+.talkyView {
+	height: 100%;
+}
+
+
+.tab {
+	float: left;
+  border-color: #FFF;
+  box-shadow: none;
+  margin: 2px;
+}
+
+.tab:hover {
+  background-color: rgb(255,102,0);
+  margin: 2px;
+}
+
+.active {
+    border-color: #FFF;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+    /* margin-bottom: -2px; */
+    background-color: rgb(255,102,0);
+    margin: 2px;
+}
+
+.tab a {
+  display: block;
+  padding: 12px 20px;
+  border: 0 solid black;
+  border-radius: 3px 3px 0 0;
+  color: rgb(250,250,250);
+  opacity: 1;
+}
+
+.tab.active a {
+	color: black;
+}
+
+.talky .icon img {
+  margin-top: -4px;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}
+
+.icon {
+	display: inline-block;
+	height: 24px;
+  margin-right: 2px;
+  margin-top: -3px;
+  float: left;
+}
+
+.icon img {
+    margin-top: 0px;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+.serviceIcon img {
+    height: 100%;
+    width: auto;
+}
+
+.badge {
+  background: -webkit-radial-gradient( 5px -9px, circle, white 8%, red 26px );
+  background-color: red;
+  border: 0px solid white;
+  border-radius: 14px;
+  box-shadow: 1px 1px 1px black;
+  color: white;
+  font: bold 12px/10px "Helvetica Neue", Helvetica, Verdana, Tahoma;
+  height: 14px;
+  padding: 4px 3px 0 3px;
+  text-align: center;
+  min-width: 16px;
+  float: right;
+  /* left: 1; */
+  /* margin: 6px; */
+  position: relative;
+  top: 0;
+  margin-left: 4px;
+  border: 1px solid white;
+}
