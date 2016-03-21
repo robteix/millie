@@ -2,6 +2,8 @@
 
 const ipcRenderer = require("electron").ipcRenderer;
 
+let __messageCount = -1;
+
 // getCount finds how many unread messages are available.
 //
 // Telegram web displays the information as a little badge by each
@@ -23,7 +25,10 @@ function getCount() {
     	let n = parseInt(badges.item(i).innerHTML) || 0;
 		count+=n;
     }
-    ipcRenderer.sendToHost("message-count", count)
+    if (count !== __messageCount) {
+    	__messageCount = count;
+    	ipcRenderer.sendToHost("message-count", count);
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {

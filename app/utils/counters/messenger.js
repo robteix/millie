@@ -1,6 +1,7 @@
 'use strict';
 
 const ipcRenderer = require("electron").ipcRenderer;
+let __messageCount = -1;
 
 // getCount tries to count unread messages. messenger.com
 // doesn't display the information, but it sets the 
@@ -12,9 +13,10 @@ function getCount() {
     if (elm) {
     	count = elm.length;
     }
-    ipcRenderer.sendToHost("message-count", count);
-
-
+    if (count !== __messageCount) {
+    	__messageCount = count;
+    	ipcRenderer.sendToHost("message-count", count);
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import styles from './Home.css';
 import TalkyView from './TalkyView.js';
 import ServiceView from './ServiceView.js';
-//var classNames = require('classnames');
 import classNames from 'classnames';
 import AddServiceDialog from './AddServiceDialog';
 import Tabs from './Tabs';

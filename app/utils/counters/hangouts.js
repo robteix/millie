@@ -2,6 +2,8 @@
 
 const ipcRenderer = require("electron").ipcRenderer;
 
+let __messageCount = -1;
+
 function getCount() {
     let count = 0;
     let badges = document.getElementsByClassName("_5fx8");
@@ -9,7 +11,10 @@ function getCount() {
     	let n = parseInt(badges.item(i).innerHTML) || 0;
 		count+=n;
     }
-    ipcRenderer.sendToHost("message-count", count);
+    if (count !== __messageCount) {
+    	__messageCount = count;
+    	ipcRenderer.sendToHost("message-count", count);
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function() {
