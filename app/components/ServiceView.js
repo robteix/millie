@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as TalkyActions from '../actions/talky';
 
+import HangoutsView from './HangoutsView.js';
 import MessengerView from './MessengerView.js';
 import SkypeView from './SkypeView.js';
 import TalkyView from './TalkyView.js';
@@ -18,7 +19,7 @@ let cx = classNames.bind(styles);
 // ServiceView displays one of the available services
 class ServiceView extends Component {
   static propTypes = {
-  	type: PropTypes.oneOf(['messenger', 'skype', 'talky', 'telegram', 'whatsapp']).isRequired,
+  	type: PropTypes.oneOf(['hangouts', 'messenger', 'skype', 'talky', 'telegram', 'whatsapp']).isRequired,
     id: PropTypes.string.isRequired,
     visible: PropTypes.bool,
     onCounter: PropTypes.func,
@@ -28,6 +29,7 @@ class ServiceView extends Component {
     const { id, onCounter, type, visible, setCounter } = this.props;
 
     const services = {
+      'hangouts': HangoutsView,
       'messenger': MessengerView,
     	'skype': SkypeView,
       'telegram': TelegramView,
@@ -36,6 +38,7 @@ class ServiceView extends Component {
     };
 
     var SView = services[type];
+    if (SView === undefined) return null;
 
     let className = cx('serviceView', {
       hide: !visible,

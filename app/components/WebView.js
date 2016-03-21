@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 export default class WebView extends Component {
   isSourceSet = false;
+  webView = null;
   static propTypes = {
     autosize: React.PropTypes.bool,
     disablewebsecurity: React.PropTypes.bool,
@@ -14,11 +15,23 @@ export default class WebView extends Component {
     useragent: React.PropTypes.string,
     partition: React.PropTypes.string.isRequired,
     onCount: React.PropTypes.func,
+    openDevTools: React.PropTypes.bool,
   };
   
   componentDidMount() {
     const node = findDOMNode(this);
-    this.setUpListeners(node);
+    //node.addEventListener('console-message', this._onConsoleMessage);
+    node.addEventListener('ipc-message', this._onIpcMessage.bind(this));
+    node.addEventListener('new-window', this._onNewWindow);
+    node.addEventListener("dom-ready", this._onDomReady.bind(this));
+  }
+
+  componentDidUnmout() {
+    const node = findDOMNode(this);
+    //node.removeEventListener('console-message', this._onConsoleMessage);
+    node.removeEventListener('ipc-message', this._onIpcMessage.bind(this));
+    node.removeEventListener('new-window', this._onNewWindow);
+    node.removeEventListener('dom-ready', this._onDomReady.bind(this));
   }
 
   render() {
@@ -32,7 +45,7 @@ export default class WebView extends Component {
               this.isSourceSet = true;
             }
           }
-        }} />
+      }} />
     );
   }
 
@@ -43,12 +56,22 @@ export default class WebView extends Component {
     }
   }
 
-  setUpListeners(node) {
-    /*node.addEventListener('console-message', (a) => {
-      console.log(a)
-    });*/
-    node.addEventListener('ipc-message', (event) => {
-      if (event.channel === 'message-count') this._onCount(event);
-    })
+  _onDomReady(event) {
+    if (this.props.openDevTools) {
+      const node = findDOMNode(this);
+      node.openDevTools();
+    }
+  }
+
+  _onNewWindow(event) {
+    require('electron').shell.openExternal(event.url);
+  }
+
+  _onConsoleMessage(event) {
+    console.log('console-message', event.message);
+  }
+
+  _onIpcMessage(event) {
+    if (event.channel === 'message-count') this._onCount(event);
   }
 }

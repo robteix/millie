@@ -2,19 +2,14 @@
 
 const ipcRenderer = require("electron").ipcRenderer;
 
-// getCount tries to count unread messages. messenger.com
-// doesn't display the information, but it sets the 
-// conversation to bold with class _5fx8. We can count
-// how many convos have this class.
 function getCount() {
     let count = 0;
-    let elm = document.getElementsByClassName("_5fx8");
-    if (elm) {
-    	count = elm.length;
+    let badges = document.getElementsByClassName("_5fx8");
+    for (let i = 0; i < badges.length; i++) {
+    	let n = parseInt(badges.item(i).innerHTML) || 0;
+		count+=n;
     }
     ipcRenderer.sendToHost("message-count", count);
-
-
 }
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import styles from './ServiceView.css';
 import WebView from './WebView';
 
-class SkypeView extends Component {
+class HangoutsView extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     onCounter: PropTypes.func.isRequired,
@@ -11,11 +11,11 @@ class SkypeView extends Component {
 
   render() {
     const { id, onCounter } = this.props;
-    var partition = "persist:skype_"+id;
+    var partition = "persist:hangouts_"+id;
     return (
         <WebView id={partition} 
-          source="https://web.skype.com/"
-          preload='./utils/counters/skype.js' 
+          source="https://hangouts.google.com/"
+          preload='./utils/counters/hangouts.js' 
           partition={partition} 
           className={styles.serviceView}
           onCounter={onCounter} />
@@ -24,4 +24,4 @@ class SkypeView extends Component {
   }
 }
 
-export default SkypeView;
+export default HangoutsView;

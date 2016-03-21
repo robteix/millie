@@ -4,6 +4,10 @@ const services = {
 		title: 'Talky',
 		icon: './img/talky.png',
 	},
+	'hangouts': {
+		title: 'Google Hangouts',
+		icon: './img/hangouts.png',
+	},
 	'messenger': {
 		title: 'Messenger',
 		icon: './img/messenger.png',

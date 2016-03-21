@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './ServiceView.css';
 
+import HangoutsDialog from './HangoutsDialog';
 import MessengerDialog from './MessengerDialog';
 import TelegramDialog from './TelegramDialog';
+import SkypeDialog from './SkypeDialog';
 import WhatsAppDialog from './WhatsAppDialog';
 
 import { bindActionCreators } from 'redux';
@@ -17,10 +19,14 @@ class AddServiceDialog extends Component {
   render() {
     const { editingService } = this.props;
     switch (editingService.type) {
+      case 'hangouts':
+        return <HangoutsDialog />
       case 'messenger':
         return <MessengerDialog />
       case 'telegram':
         return <TelegramDialog />
+      case 'skype':
+        return <SkypeDialog />
       case 'whatsapp':
         return <WhatsAppDialog />
     }
