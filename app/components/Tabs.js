@@ -17,7 +17,16 @@ class Tabs extends Component {
     	const {selected, selectService, services} = this.props;
     	
         return (
-        	<div>
+        	<ul className={styles.tabs}>
+                <li key='talky'
+                    className={classNames(styles.tab, selected == 'talky' ? styles.active : null)}>
+                  <a onClick={()=>selectService('talky')}>
+                    <div className={styles.talkyIcon}>
+                      <img width="24" src={Services.talky().icon}/>
+                    </div>
+                    &nbsp;
+                  </a>
+                </li>
 	        	{services.map(function(s) {
 		    		return (
 		        		<li key={'tab_' + s.id }
@@ -31,7 +40,7 @@ class Tabs extends Component {
                         <span style={{display:s.count>0?null:'none'}} className={styles.badge}>{s.count}</span></a></li>
 		            );
 		    	})}
-        	</div>
+        	</ul>
         );
     }
 }

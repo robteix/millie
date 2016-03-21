@@ -31,17 +31,7 @@ export default class Home extends Component {
       <div>
         <div className={styles.container}>
           
-          <ul className={styles.tabs}>
-            <li key='talky' className={classNames(styles.talky, styles.tab, selected=='talky'?styles.active:null)}>
-              <a onClick={()=>selectService('talky')}>
-                <div className={styles.icon}>
-                  <img width="24" src={Services.talky().icon}/>
-                </div>
-                &nbsp;
-              </a>
-            </li>
-            <Tabs services={services} selectService={selectService} />
-          </ul>
+          <Tabs services={services} selectService={selectService} />
 
           <div className={styles.serviceContainer}>
             <TalkyView visible={selected=='talky'} />
