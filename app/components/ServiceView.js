@@ -11,13 +11,14 @@ import MessengerView from './MessengerView.js';
 import SkypeView from './SkypeView.js';
 import TalkyView from './TalkyView.js';
 import TelegramView from './TelegramView.js';
+import WhatsAppView from './WhatsAppView.js';
 
 let cx = classNames.bind(styles);
 
 // ServiceView displays one of the available services
 class ServiceView extends Component {
   static propTypes = {
-  	type: PropTypes.oneOf(['messenger', 'skype', 'talky', 'telegram']).isRequired,
+  	type: PropTypes.oneOf(['messenger', 'skype', 'talky', 'telegram', 'whatsapp']).isRequired,
     id: PropTypes.string.isRequired,
     visible: PropTypes.bool,
     onCounter: PropTypes.func,
@@ -31,6 +32,7 @@ class ServiceView extends Component {
     	'skype': SkypeView,
       'telegram': TelegramView,
     	'talky': TalkyView,
+      'whatsapp': WhatsAppView,
     };
 
     var SView = services[type];

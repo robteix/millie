@@ -3,6 +3,7 @@ import styles from './ServiceView.css';
 
 import MessengerDialog from './MessengerDialog';
 import TelegramDialog from './TelegramDialog';
+import WhatsAppDialog from './WhatsAppDialog';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -20,6 +21,8 @@ class AddServiceDialog extends Component {
         return <MessengerDialog />
       case 'telegram':
         return <TelegramDialog />
+      case 'whatsapp':
+        return <WhatsAppDialog />
     }
     return null;
   }
