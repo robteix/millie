@@ -16,6 +16,10 @@ const services = {
 		title: 'Skype',
 		icon: './img/skype.png',
 	},
+	'slack': {
+		title: 'Slack',
+		icon: './img/slack.png',
+	},
 	'telegram': {
 		title: 'Telegram',
 		icon: './img/telegram.png',

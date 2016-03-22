@@ -10,6 +10,7 @@ import * as TalkyActions from '../actions/talky';
 import HangoutsView from './HangoutsView.js';
 import MessengerView from './MessengerView.js';
 import SkypeView from './SkypeView.js';
+import SlackView from './SlackView.js';
 import TalkyView from './TalkyView.js';
 import TelegramView from './TelegramView.js';
 import WhatsAppView from './WhatsAppView.js';
@@ -21,20 +22,22 @@ class ServiceView extends Component {
   static propTypes = {
   	type: PropTypes.oneOf(['hangouts', 'messenger', 'skype', 'talky', 'telegram', 'whatsapp']).isRequired,
     id: PropTypes.string.isRequired,
+    team: PropTypes.string,
     visible: PropTypes.bool,
     onCounter: PropTypes.func,
   };
 
   render() {
-    const { id, onCounter, type, visible, setCounter } = this.props;
+    const { id, onCounter, type, team, visible, setCounter } = this.props;
 
     const services = {
-      'hangouts': HangoutsView,
-      'messenger': MessengerView,
-    	'skype': SkypeView,
-      'telegram': TelegramView,
-    	'talky': TalkyView,
-      'whatsapp': WhatsAppView,
+      'hangouts': (<HangoutsView {...this.props} />),
+      'messenger': <MessengerView {...this.props} />,
+      'skype': <SkypeView {...this.props} />,
+      'slack': <SlackView {...this.props} team={team} />,
+      'telegram': <TelegramView {...this.props} />,
+    	'talky': <TalkyView {...this.props} />,
+      'whatsapp': <WhatsAppView {...this.props} />,
     };
 
     var SView = services[type];
@@ -45,7 +48,7 @@ class ServiceView extends Component {
     });
     return (
       <div className={className}>
-    	 <SView id={id} onCounter={(c)=>setCounter(id, c)}></SView>
+        {SView}
       </div>
     );
   }

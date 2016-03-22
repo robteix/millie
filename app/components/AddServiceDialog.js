@@ -5,6 +5,7 @@ import HangoutsDialog from './HangoutsDialog';
 import MessengerDialog from './MessengerDialog';
 import TelegramDialog from './TelegramDialog';
 import SkypeDialog from './SkypeDialog';
+import SlackDialog from './SlackDialog';
 import WhatsAppDialog from './WhatsAppDialog';
 
 import { bindActionCreators } from 'redux';
@@ -27,6 +28,8 @@ class AddServiceDialog extends Component {
         return <TelegramDialog />
       case 'skype':
         return <SkypeDialog />
+      case 'slack':
+        return <SlackDialog />
       case 'whatsapp':
         return <WhatsAppDialog />
     }

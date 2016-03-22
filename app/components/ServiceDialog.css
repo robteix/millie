@@ -171,6 +171,14 @@ button.delete {
 	font-size: large;
 }
 
+.slackFieldLabel {
+    color: rgb(255, 102, 0);
+    width: 3em;
+    padding-top: 4px;
+    font-size: large;
+}
+
+
 .titleInput {
 	display: inline-block;
 	width: 100%;
@@ -188,4 +196,41 @@ button.delete {
 	color: red;
 	font-size: smaller;
 	padding-top: 4px;
+}
+
+
+
+.inputWrapper {
+    position: relative;
+}
+
+.urlOverlay {
+    -webkit-transition: width 2s;
+    -moz-transition: width 2s;
+    transition: width 2s;
+    max-width: 95%;
+    overflow: hidden;
+    white-space: pre;
+    color: rgba(0,0,0,0);
+    z-index: 5;
+}
+
+.urlOverlay::after {
+    color: #9e9ea6;
+    content: ".slack.com";
+}
+
+.inputWrapper input {
+    position: relative;
+    font-family: "Helvetica Neue", Arial, Helvetica;
+}
+.inputWrapper p {
+    position: absolute;
+    margin: 1px;
+    pointer-events: none;
+    border-left: 1px solid;
+    border-color: rgba(0,0,0,0);
+    font-size: large;
+    padding: 4px;
+    font-family: "Helvetica Neue", Arial, Helvetica;
 }
