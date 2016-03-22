@@ -46,7 +46,10 @@ process.on('uncaughtException', function (error) {
 });
 
 app.on('ready', () => {
-  mainWindow = new BrowserWindow({ width: 1024, height: 728, icon: './app/img/talky.png' });
+  mainWindow = new BrowserWindow({
+    width: 1024, height: 728, 
+    minWidth: 1024, minHeight: 728,
+    icon: './app/img/talky.png' });
 
   mainWindow.loadURL(`file://${__dirname}/app/app.html`);
 
