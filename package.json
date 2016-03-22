@@ -16,7 +16,10 @@
     "package": "cross-env NODE_ENV=production node package.js",
     "package-all": "npm run package -- --all --asar",
     "postinstall": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
-    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\""
+    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
+    "pack:osx": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=darwin --arch=x64 --sign='Mac Developer: Roberto Teixeira (P637MFNL8H)' --icon=./app/img/app.icns --asar=true --overwrite",
+    "pack:win": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=win32 --arch=ia32 --version-string.CompanyName='robteix.com' --version-string.LegalCopyright='Copyright (C) 2016 Roberto Selbach Teixeira' --version-string.FileDescription=$npm_package_productName --version-string.OriginalFilename='Talky.exe' --version-string.InternalName=$npm_package_productName --version-string.ProductName=$npm_package_productName --version-string.ProductVersion=$npm_package_version --asar=true --icon=./app/img/app.ico --overwrite"
+
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
