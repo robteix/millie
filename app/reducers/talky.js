@@ -28,6 +28,7 @@ export default function talky(state = initialState, action) {
             id: uuid.v1(),
             type: action.service.type,
             title: action.service.title,
+            team: action.service.team,
             count: 0,
         };
         let services = [...state.services, service];

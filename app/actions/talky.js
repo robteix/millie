@@ -16,12 +16,13 @@ export function selectService(service) {
   };
 }
 
-export function addService(service, title) {
+export function addService(service, title, team = '') {
   return {
     type: ADD_SERVICE,
     service: {
       type: service,
       title: title,
+      team: team,
       count: 0,
     }
   };

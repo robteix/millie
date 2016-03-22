@@ -37,7 +37,7 @@ export default class Home extends Component {
             {services.map(function(s) {
               return (
                <ServiceView key={'content_'+s.id} id={s.id} type={s.type} 
-                            visible={selected==s.id}></ServiceView>
+                team={s.team} visible={selected==s.id}></ServiceView>
               );
             })}
           </div>
