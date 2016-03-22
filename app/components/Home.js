@@ -36,8 +36,8 @@ export default class Home extends Component {
             <TalkyView visible={selected=='talky'} />
             {services.map(function(s) {
               return (
-               <ServiceView key={'content_'+s.id} id={s.id} type={s.type} 
-                team={s.team} visible={selected==s.id}></ServiceView>
+               <ServiceView key={'content_'+s.id} service={s} 
+                  visible={selected==s.id}></ServiceView>
               );
             })}
           </div>

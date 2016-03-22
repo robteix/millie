@@ -5,17 +5,16 @@ import WebView from './WebView';
 
 class SlackView extends Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
-    team: PropTypes.string.isRequired,
+    service: PropTypes.object.isRequired,
     onCounter: PropTypes.func.isRequired,
   };
 
   render() {
-    const { id, onCounter, team } = this.props;
-    var partition = "persist:slack_"+id;
+    const { onCounter, service } = this.props;
+    var partition = "persist:slack_"+service.id;
     return (
         <WebView id={partition} 
-          source={'https://'+team+'.slack.com/'}
+          source={'https://'+service.team+'.slack.com/'}
           preload='./utils/counters/slack.js' 
           partition={partition} 
           className={styles.serviceView}

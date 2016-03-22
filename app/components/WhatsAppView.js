@@ -5,13 +5,13 @@ import WebView from './WebView';
 
 class WhatsAppView extends Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
+    service: PropTypes.object.isRequired,
     onCounter: PropTypes.func.isRequired,
   };
 
   render() {
-    const { id, onCounter } = this.props;
-    var partition = "persist:messenger_"+id;
+    const { onCounter, service } = this.props;
+    var partition = "persist:messenger_"+service.id;
     return (
         <WebView id={partition} 
           source="https://web.whatsapp.com/"
