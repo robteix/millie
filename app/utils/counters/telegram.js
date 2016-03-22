@@ -32,7 +32,7 @@ function getCount() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	setInterval(getCount, 3000)
+	setInterval(getCount, 1000)
 });
 
 ipcRenderer.on("deleteNotification", function() {
