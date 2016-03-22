@@ -13,6 +13,10 @@ const shell = electron.shell;
 const ipcMain = require('electron').ipcMain;
 const nativeImage = require('electron').nativeImage;
 
+
+if (require('electron-squirrel-startup')) return;
+
+
 var ElectronSettings = require('electron-settings');
 var settings = new ElectronSettings({
     configDirPath: app.getPath('userData')
