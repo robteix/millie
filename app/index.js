@@ -43,6 +43,16 @@ ipcRenderer.on('select-service', (event, id) => {
   store.dispatch(selectService(id));
 });
 
+import {app} from 'remote';
+import {focusWebview} from './utils/ui';
+
+app.on('browser-window-focus', function() {
+  let state = store.getState();
+  if (state.talky && state.talky.selected) {
+    focusWebview(state.talky.selected);
+  }
+});
+
 if (process.env.NODE_ENV !== 'production') {
   // Use require because imports can't be conditional.
   // In production, you should ensure process.env.NODE_ENV

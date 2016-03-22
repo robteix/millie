@@ -46,6 +46,7 @@ export default function talky(state = initialState, action) {
             services: newServices,
         });
     case SELECT_SERVICE:
+        UI.focusWebview(action.service);
     	return Object.assign({}, state, {
 	        selected: action.service
         });

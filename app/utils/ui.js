@@ -6,6 +6,21 @@ import {selectService} from '../actions/talky';
 
 const ipcRenderer = require('electron').ipcRenderer;
 
+// focusWebview sets the focus on the webview for
+// the service
+export function focusWebview(serviceId) {
+  if (serviceId) {
+    let webViews = document.getElementsByTagName('webview');
+    for (let i = 0; i < webViews.length; i++) {
+      let webView = webViews[i];
+      if (typeof(webView.id) === 'string' && webView.id.endsWith(serviceId)) {
+        webView.focus();
+        break;
+      }
+    }
+  }
+}
+
 // setBadge sets the icon unread badge. For now this
 // only works on OSX. 
 export function setBadge(unread) {
