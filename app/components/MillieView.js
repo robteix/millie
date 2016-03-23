@@ -1,17 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './TalkyView.css';
+import styles from './MillieView.css';
 import classNames from 'classnames/bind';
 import Services from '../utils/services.js';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 
 let cx = classNames.bind(styles);
 
 // ServiceView displays one of the available services
-class TalkyView extends Component {
+class MillieView extends Component {
   static propTypes = {
     visible: PropTypes.bool,
     services: PropTypes.array.isRequired,
@@ -20,7 +20,7 @@ class TalkyView extends Component {
   render() {
     const { openServiceDialog, services, visible } = this.props;
 
-    let className = cx('talkyView', {
+    let className = cx('millieView', {
       hide: !visible,
     });
     return (
@@ -58,10 +58,10 @@ class TalkyView extends Component {
 
 function mapStateToProps(state) {
   return {
-    services: state.talky.services,
+    services: state.millie.services,
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps)(TalkyView);
+export default connect(mapStateToProps, mapDispatchToProps)(MillieView);

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './Home.css';
-import TalkyView from './TalkyView.js';
+import MillieView from './MillieView.js';
 import ServiceView from './ServiceView.js';
 import classNames from 'classnames';
 import AddServiceDialog from './AddServiceDialog';
@@ -33,7 +33,7 @@ export default class Home extends Component {
           <Tabs services={services} selectService={selectService} />
 
           <div className={styles.serviceContainer}>
-            <TalkyView visible={selected=='talky'} />
+            <MillieView visible={selected=='millie'} />
             {services.map(function(s) {
               return (
                <ServiceView key={'content_'+s.id} service={s} 

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import talky from './talky';
+import millie from './millie';
 
 const rootReducer = combineReducers({
-  talky,
+  millie,
   routing
 });
 

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Services from '../utils/services';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 
 class Tabs extends Component {
     static propTypes = {
@@ -18,11 +18,11 @@ class Tabs extends Component {
     	
         return (
         	<ul className={styles.tabs}>
-                <li key='talky'
-                    className={classNames(styles.tab, selected == 'talky' ? styles.active : null)}>
-                  <a onClick={()=>selectService('talky')}>
-                    <div className={styles.talkyIcon}>
-                      <img width="24" src={Services.talky().icon}/>
+                <li key='millie'
+                    className={classNames(styles.tab, selected == 'millie' ? styles.active : null)}>
+                  <a onClick={()=>selectService('millie')}>
+                    <div className={styles.millieIcon}>
+                      <img width="24" src={Services.millie().icon}/>
                     </div>
                     &nbsp;
                   </a>
@@ -47,13 +47,13 @@ class Tabs extends Component {
 
 function mapStateToProps(state) {
   return {
-    selected: state.talky.selected,
-    services: state.talky.services,
+    selected: state.millie.selected,
+    services: state.millie.services,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tabs);

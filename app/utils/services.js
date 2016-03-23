@@ -1,8 +1,8 @@
 
 const services = {
-	'talky': {
-		title: 'Talky',
-		icon: './img/talky.png',
+	'millie': {
+		title: 'Millie',
+		icon: './img/millie.png',
 	},
 	'hangouts': {
 		title: 'Google Hangouts',
@@ -31,11 +31,11 @@ const services = {
 };
 
 export default class Services {
-	static toArray(ignoreTalky = true) {
+	static toArray(ignoreMillie = true) {
 		let arr = [];
 		for (let id in services) {
 			if (!services.hasOwnProperty(id)) continue;
-			if (ignoreTalky && id === 'talky') continue;
+			if (ignoreMillie && id === 'millie') continue;
 			arr.push(Object.assign({}, services[id], {id: id}));
 		}
 
@@ -46,8 +46,8 @@ export default class Services {
 		return Object.assign({}, services);
 	}
 
-	static talky() {
-		return this.service('talky');
+	static millie() {
+		return this.service('millie');
 	}
 
 	static service(id) {

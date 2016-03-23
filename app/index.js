@@ -6,11 +6,11 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import routes from './routes';
 import configureStore from './store/configureStore';
 import { ipcRenderer } from 'electron';
-import { setServices } from './actions/talky';
+import { setServices } from './actions/millie';
 import './app.global.css';
 import settings from './utils/settings';
 
-import {selectService} from './actions/talky';
+import {selectService} from './actions/millie';
 
 import multi from 'redux-multi'
 import {createStore, applyMiddleware} from 'redux'
@@ -48,8 +48,8 @@ import {focusWebview} from './utils/ui';
 
 app.on('browser-window-focus', function() {
   let state = store.getState();
-  if (state.talky && state.talky.selected) {
-    focusWebview(state.talky.selected);
+  if (state.millie && state.millie.selected) {
+    focusWebview(state.millie.selected);
   }
 });
 

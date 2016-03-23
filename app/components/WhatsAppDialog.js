@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import {Services} from '../utils/services';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 import ServiceDialog from './ServiceDialog';
 
 let cx = classNames.bind(styles);
@@ -72,12 +72,12 @@ class WhatsAppDialog extends Component {
 
 function mapStateToProps(state) {
   return {
-    editingService: state.talky.editingService,
+    editingService: state.millie.editingService,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WhatsAppDialog);

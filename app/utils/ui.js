@@ -2,7 +2,7 @@
 'use strict';
 
 import {getCurrentWindow, app, Menu} from 'remote';
-import {selectService} from '../actions/talky';
+import {selectService} from '../actions/millie';
 
 const ipcRenderer = require('electron').ipcRenderer;
 
@@ -35,7 +35,7 @@ export function makeMenus(services, selectService) {
   if (mainWindow === undefined || mainWindow === null) {
     return;
   }
-  let appName = 'Talky';
+  let appName = 'Millie';
 
   // for OSX
   if (process.platform === 'darwin') {
@@ -132,10 +132,10 @@ export function makeMenus(services, selectService) {
     };
 
 	let servicesMenu = [{
-    label: 'Talky',
+    label: 'Millie',
       accelerator: 'Command+1',
       click() {
-        selectService('talky');
+        selectService('millie');
       }
     }];
 	let c = 2;
@@ -283,10 +283,10 @@ export function makeMenus(services, selectService) {
     };
 
   let servicesMenu = [{
-    label: 'Talky',
+    label: 'Millie',
       accelerator: 'Control+1',
       click() {
-        selectService('talky');
+        selectService('millie');
       }
     }];
   let c = 2;

@@ -1,18 +1,18 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Home from '../components/Home';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 
 function mapStateToProps(state) {
   return {
-    selected: state.talky.selected,
-    isOpenAddServiceDialog: state.talky.isOpenAddServiceDialog,
-    services: state.talky.services,
+    selected: state.millie.selected,
+    isOpenAddServiceDialog: state.millie.isOpenAddServiceDialog,
+    services: state.millie.services,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -13,7 +13,7 @@
   font-size: 5rem;
 } 
 
-.talkyView {
+.millieView {
 	height: 100%;
 }
 
@@ -60,7 +60,7 @@
 	color: black;
 }
 
-.talky .icon img {
+.millie .icon img {
   margin-top: -4px;
   vertical-align: middle;
   width: 32px;
@@ -83,7 +83,7 @@
 }
 
 
-.talkyIcon {
+.millieIcon {
   display: inline-block;
   height: 32px;
   margin-right: 2px;
@@ -91,7 +91,7 @@
   float: left;
 }
 
-.talkyIcon img {
+.millieIcon img {
     margin-top: -4px;
     vertical-align: middle;
     width: 32px;

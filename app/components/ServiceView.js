@@ -5,13 +5,13 @@ import classNames from 'classnames/bind';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 
 import HangoutsView from './HangoutsView.js';
 import MessengerView from './MessengerView.js';
 import SkypeView from './SkypeView.js';
 import SlackView from './SlackView.js';
-import TalkyView from './TalkyView.js';
+import MillieView from './MillieView.js';
 import TelegramView from './TelegramView.js';
 import WhatsAppView from './WhatsAppView.js';
 
@@ -33,7 +33,7 @@ class ServiceView extends Component {
       'skype': SkypeView,
       'slack': SlackView,
       'telegram': TelegramView,
-    	'talky': TalkyView,
+    	'millie': MillieView,
       'whatsapp': WhatsAppView,
     };
 
@@ -55,6 +55,6 @@ function mapStateToProps(state) {
   return {};
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ServiceView);

@@ -53,7 +53,7 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 1024, height: 728, 
     minWidth: 800, minHeight: 600,
-    icon: './app/img/talky.png' });
+    icon: './app/img/mili.png' });
 
   mainWindow.loadURL(`file://${__dirname}/app/app.html`);
 

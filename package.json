@@ -1,8 +1,8 @@
 {
-  "name": "talky",
-  "productName": "Talky",
+  "name": "millie",
+  "productName": "Millie",
   "version": "0.0.1",
-  "description": "Talky is a multiplatform, multiservice instant messaging client",
+  "description": "Millie is a multiplatform, multiservice instant messaging client",
   "main": "main.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js test/**/*.spec.js",
@@ -18,14 +18,14 @@
     "postinstall": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
     "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
     "pack:osx": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=darwin --arch=x64 --sign='Mac Developer: Roberto Teixeira (P637MFNL8H)' --icon=./app/img/app.icns --asar=true --overwrite",
-    "pack:win": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=win32 --arch=x64 --version-string.CompanyName='robteix.com' --version-string.LegalCopyright='Copyright (C) 2016 Roberto Selbach Teixeira' --version-string.FileDescription=$npm_package_productName --version-string.OriginalFilename='Talky.exe' --version-string.InternalName=$npm_package_productName --version-string.ProductName=$npm_package_productName --version-string.ProductVersion=$npm_package_version --asar=true --icon=./app/img/app.ico --overwrite"
+    "pack:win": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=win32 --arch=x64 --version-string.CompanyName='robteix.com' --version-string.LegalCopyright='Copyright (C) 2016 Roberto Selbach Teixeira' --version-string.FileDescription=$npm_package_productName --version-string.OriginalFilename='Millie.exe' --version-string.InternalName=$npm_package_productName --version-string.ProductName=$npm_package_productName --version-string.ProductVersion=$npm_package_version --asar=true --icon=./app/img/app.ico --overwrite"
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robteix/talky.git"
+    "url": "git+https://github.com/robteix/millie.git"
   },
   "author": {
     "name": "Roberto Selbach Teixeira",
@@ -34,12 +34,12 @@
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/robteix/talky/issues"
+    "url": "https://github.com/robteix/millie/issues"
   },
   "keywords": [
     "instant messaging"
   ],
-  "homepage": "https://robteix.com/talky",
+  "homepage": "https://robteix.com/millie",
   "devDependencies": {
     "asar": "^0.10.0",
     "babel-core": "^6.6.0",

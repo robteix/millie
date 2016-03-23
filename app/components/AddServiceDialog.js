@@ -10,7 +10,7 @@ import WhatsAppDialog from './WhatsAppDialog';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as TalkyActions from '../actions/talky';
+import * as MillieActions from '../actions/millie';
 
 class AddServiceDialog extends Component {
   static propTypes = {
@@ -39,10 +39,10 @@ class AddServiceDialog extends Component {
 
 function mapStateToProps(state) {
   return {
-    editingService: state.talky.editingService,
+    editingService: state.millie.editingService,
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(TalkyActions, dispatch);
+  return bindActionCreators(MillieActions, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AddServiceDialog);

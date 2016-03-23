@@ -7,7 +7,7 @@ import {
 	SELECT_SERVICE,
     SET_COUNTER,
     SET_SERVICES,
-} from '../actions/talky';
+} from '../actions/millie';
 
 import settings from '../utils/settings';
 import uuid from 'node-uuid';
@@ -15,12 +15,12 @@ import * as UI from '../utils/ui';
 
 let initialState = {
     services: [],
-    selected: 'talky',
+    selected: 'millie',
     editingService: {},
     menuNeedsUpdating: true,
 };
 
-export default function talky(state = initialState, action) {
+export default function millie(state = initialState, action) {
     let newServices;
   switch (action.type) {
     case ADD_SERVICE:
