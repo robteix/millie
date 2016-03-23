@@ -103,6 +103,20 @@ function pack(plat, arch, cb) {
     out: `release/${plat}-${arch}`
   });
 
+  opts['version-string'] = {
+    CompanyName: 'robteix.com',
+    LegalCopyright: 'Copyright (C) 2016 Roberto Selbach Teixeira',
+    FileDescription: pkg.productName,
+    InternalName: pkg.productName,
+    ProductName: pkg.productName,
+    ProductVersion: pkg.version
+  }
+  if (plat == 'win32') {
+    opts['version-string'].OriginalFilename = 'Millie.exe';
+  } else if (plat === 'linux') {
+    opts['version-string'].OriginalFilename = 'Millie';
+  }
+
   packager(opts, cb);
 }
 

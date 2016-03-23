@@ -16,9 +16,7 @@
     "package": "cross-env NODE_ENV=production node package.js",
     "package-all": "npm run package -- --all --asar",
     "postinstall": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
-    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
-    "pack:osx": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=darwin --arch=x64 --sign='Mac Developer: Roberto Teixeira (P637MFNL8H)' --icon=./app/img/app.icns --asar=true --overwrite",
-    "pack:win": "./node_modules/.bin/electron-packager . $npm_package_productName --app-version=$npm_package_version --version=0.37.2 --out=release --ignore='^/release$' --platform=win32 --arch=x64 --version-string.CompanyName='robteix.com' --version-string.LegalCopyright='Copyright (C) 2016 Roberto Selbach Teixeira' --version-string.FileDescription=$npm_package_productName --version-string.OriginalFilename='Millie.exe' --version-string.InternalName=$npm_package_productName --version-string.ProductName=$npm_package_productName --version-string.ProductVersion=$npm_package_version --asar=true --icon=./app/img/app.ico --overwrite"
+    "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\""
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
@@ -92,6 +90,7 @@
     "css-modules-require-hook": "^3.0.0",
     "electron-debug": "^0.5.2",
     "electron-settings": "^1.0.2",
+    "electron-squirrel-startup": "^0.1.4",
     "font-awesome": "^4.4.0",
     "keycode": "^2.1.1",
     "material-ui": "^0.15.0-alpha.1",
