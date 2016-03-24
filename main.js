@@ -13,8 +13,33 @@ const shell = electron.shell;
 const ipcMain = require('electron').ipcMain;
 const nativeImage = require('electron').nativeImage;
 
+// handle Squirrel.Windows events
+var path = require('path');
+var spawn = require('child_process').spawn;
+var run = function(args, done) {
+  var updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
+  spawn(updateExe, args, {
+    detached: true
+  }).on('close', done);
+};
 
-if (require('electron-squirrel-startup')) return;
+if (process.platform === 'win32') {
+  var cmd = process.argv[1];
+  var target = path.basename(process.execPath);
+
+  if (cmd === '--squirrel-install' || cmd === '--squirrel-updated') {
+    run(['--createShortcut=' + target + ''], app.quit);
+    return;
+  }
+  if (cmd === '--squirrel-uninstall') {
+    run(['--removeShortcut=' + target + ''], app.quit);
+    return;
+  }
+  if (cmd === '--squirrel-obsolete') {
+    app.quit();
+    return;
+  }
+}
 
 
 var ElectronSettings = require('electron-settings');
