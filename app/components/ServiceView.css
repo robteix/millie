@@ -1,9 +1,15 @@
 .serviceView {
 	display: flex;
     flex-grow: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
 }
-
 .hide {
+	z-index: -9999;
+}
+.shide {
    position: absolute !important;
    top: -9999px !important;
    left: -9999px !important;
