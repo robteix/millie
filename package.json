@@ -2,7 +2,7 @@
   "name": "millie",
   "productName": "Millie",
   "version": "0.0.1",
-  "description": "Millie is a multiplatform, multiservice instant messaging client",
+  "description": "Millie is a multiplatform, multiservice instant messaging client done with lots of love",
   "main": "main.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register --recursive --require ./test/setup.js test/**/*.spec.js",
@@ -37,7 +37,7 @@
   "keywords": [
     "instant messaging"
   ],
-  "homepage": "https://robteix.com/millie",
+  "homepage": "https://millie.robteix.com",
   "devDependencies": {
     "asar": "^0.10.0",
     "babel-core": "^6.6.0",
