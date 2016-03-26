@@ -43,7 +43,7 @@ ipcRenderer.on('select-service', (event, id) => {
   store.dispatch(selectService(id));
 });
 
-import {app} from 'remote';
+import {app, getCurrentWindow} from 'remote';
 import {focusWebview} from './utils/ui';
 
 app.on('browser-window-focus', function() {
@@ -51,6 +51,12 @@ app.on('browser-window-focus', function() {
   if (state.millie && state.millie.selected) {
     focusWebview(state.millie.selected);
   }
+});
+
+var mainWindow = getCurrentWindow();
+mainWindow.webContents.on('did-finish-load', function() {
+  console.log('did-finish-load');
+  mainWindow.webContents.executeJavaScript(`var loadingHeart = document.getElementById('loadingHeart');loadingHeart.style.display='none';`);
 });
 
 if (process.env.NODE_ENV !== 'production') {
