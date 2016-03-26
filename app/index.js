@@ -22,8 +22,9 @@ const history = syncHistoryWithStore(hashHistory, store);
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const services = settings().get('services') || [];
-
-store.dispatch(setServices(services));
+store.dispatch(setServices(services.map(service => {
+  return Object.assign({}, service, {'count': 0});
+})));
 
 // Needed for onTouchTap
 // Can go away when react 1.0 release
