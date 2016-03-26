@@ -2,7 +2,7 @@
 
 Millie is a multiplatform, multiservice instant messaging client made with love.
 
-![](./app/img/millie.png)
+![](./millie.png)
 
 ## Install
 
