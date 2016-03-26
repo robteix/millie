@@ -20,9 +20,5 @@ function getCount() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	setInterval(getCount, 1000);
-});
-
-ipcRenderer.on("deleteNotification", function() {
-	delete window.Notification;
+	setInterval(getCount, 2000);
 });
