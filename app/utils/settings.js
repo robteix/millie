@@ -1,6 +1,11 @@
 import ElectronSettings from 'electron-settings';
 
-let settings = new ElectronSettings();
+
+const app = require('electron').remote.app;
+
+let settings = new ElectronSettings({
+    configDirPath: app.getPath('userData')
+});
 
 export function get(keyPath) {
 	return settings.get(keyPath);

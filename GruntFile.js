@@ -2,20 +2,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     'create-windows-installer': {
       ia32: {
-        appDirectory: './release/Mini-win32-ia32',
+        appDirectory: './release/win32-ia32/Millie-win32-ia32',
         outputDirectory: './release',
-        name: 'Mili',
-        description: 'Mili',
+        name: 'Millie',
+        description: 'Millie',
         authors: 'Roberto Selbach Teixeira',
-        exe: 'Mili.exe'
+        exe: 'Millie.exe'
       },
       x64: {
-        appDirectory: './release/Mili-win32-x64',
+        appDirectory: './release/win32-x64/Millie-win32-x64',
         outputDirectory: './release',
-        name: 'Mili',
-        description: 'Mili',
+        name: 'Millie',
+        description: 'Millie',
         authors: 'Roberto Selbach Teixeira',
-        exe: 'Mili.exe'
+        exe: 'Millie.exe'
       }
     }
   });
