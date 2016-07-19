@@ -1,11 +1,12 @@
 /* eslint strict: 0 */
 'use strict';
 
-//const remote = require('electron').remote;
+const remote = require('electron').remote;
 
-//var getCurrentWindow = window.require('remote').getCurrentWindow;
+const getCurrentWindow = remote.getCurrentWindow;
+const app = remote.app;
+const Menu = remote.Menu;
 
-import {getCurrentWindow, app, Menu} from 'electron';
 import {selectService} from '../actions/millie';
 
 const ipcRenderer = require('electron').ipcRenderer;
