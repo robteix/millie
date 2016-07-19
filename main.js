@@ -48,7 +48,12 @@ var settings = new ElectronSettings({
 });
 
 let mainWindow;
-crashReporter.start();
+crashReporter.start({
+  productName: 'Millie',
+  companyName: 'Delightful Code',
+  submitURL: 'https://robteix.com/errors',
+  autoSubmit: true
+});
 
 if (process.env.NODE_ENV === 'development') {
   require('electron-debug')();

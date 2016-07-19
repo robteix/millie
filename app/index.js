@@ -44,7 +44,9 @@ ipcRenderer.on('select-service', (event, id) => {
   store.dispatch(selectService(id));
 });
 
-import {app, getCurrentWindow} from 'remote';
+const electron = require('electron')
+const app = electron.app
+import {getCurrentWindow} from 'electron';
 import {focusWebview} from './utils/ui';
 
 app.on('browser-window-focus', function() {
