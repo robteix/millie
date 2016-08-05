@@ -1,7 +1,7 @@
 {
   "name": "millie",
   "productName": "Millie",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "companyName": "Delightful Code",
   "description": "Millie is a multiplatform, multiservice instant messaging client done with lots of love",
   "main": "main.js",
