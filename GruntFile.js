@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         authors: 'Roberto Selbach Teixeira',
         exe: 'Millie.exe',
         noMsi: true,
-        icon: path.join(path.resolve(), 'app', 'img', 'app.ico'),
+        setupIcon: path.join(path.resolve(), 'app', 'img', 'app.ico'),
         iconUrl: 'https://raw.githubusercontent.com/robteix/millie/master/app/img/app.ico',
         loadingGif: path.join(path.resolve(), 'app', 'img', 'heart.gif')
       }
