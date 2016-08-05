@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     'create-windows-installer': {
       ia32: {
-        appDirectory: path.join(path.resolve(), 'release', 'win32-ia32', 'Millie-win32-ia32'),
+        appDirectory: path.join(path.resolve(), 'release', 'Millie-win32-ia32'),
         outputDirectory: path.join(path.resolve(), 'release'),
         name: 'Millie',
         title: 'Millie',
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         loadingGif: path.join(path.resolve(), 'app', 'img', 'heart.gif')
       },
       x64: {
-        appDirectory: path.join(path.resolve(), 'release', 'win32-x64', 'Millie-win32-x64'),
+        appDirectory: path.join(path.resolve(), 'release', 'Millie-win32-x64'),
         outputDirectory: path.join(path.resolve(), 'release'),
         name: 'Millie',
         title: 'Millie',
