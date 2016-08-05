@@ -80,10 +80,12 @@ process.on('uncaughtException', function (error) {
 });
 
 app.on('ready', () => {
+  let icon = nativeImage.createFromPath('./app/img/millie.png');
+
   mainWindow = new BrowserWindow({
     width: 1024, height: 728, 
     minWidth: 800, minHeight: 600,
-    icon: './app/img/mili.png' });
+    icon: icon});
 
   mainWindow.loadURL(`file://${__dirname}/app/app.html`);
 
