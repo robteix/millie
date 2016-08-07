@@ -35,8 +35,9 @@ export default class WebView extends Component {
   }
 
   render() {
+    const { partition, source, onCounter, ...rest } = this.props; 
     return (
-      <webview {...this.props}
+      <webview {...rest}
         ref={node => {
           if (node) {
             node.setAttribute('partition', this.props.partition);
