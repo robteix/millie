@@ -29,23 +29,14 @@ if (process.platform === 'win32') {
 
   if (cmd === '--squirrel-install' || cmd === '--squirrel-updated') {
     run(['--createShortcut=' + target + ''], app.quit);
-    return;
   }
   if (cmd === '--squirrel-uninstall') {
     run(['--removeShortcut=' + target + ''], app.quit);
-    return;
   }
   if (cmd === '--squirrel-obsolete') {
     app.quit();
-    return;
   }
 }
-
-
-var ElectronSettings = require('electron-settings');
-var settings = new ElectronSettings({
-    configDirPath: app.getPath('userData')
-});
 
 let mainWindow;
 crashReporter.start({
