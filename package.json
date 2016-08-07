@@ -52,8 +52,6 @@
     "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
     "chai": "^3.3.0",
-    "chromedriver": "^2.19.0",
-    "co-mocha": "^1.1.2",
     "concurrently": "^2.0.0",
     "cross-env": "^2.0.0",
     "css-loader": "^0.23.1",
@@ -87,8 +85,8 @@
     "classnames": "^2.2.3",
     "css-modules-require-hook": "^4.0.1",
     "electron-debug": "^1.0.1",
-    "electron-settings": "^1.0.2",
     "electron-squirrel-startup": "^1.0.0",
+    "file-exists": "^2.0.0",
     "font-awesome": "^4.4.0",
     "keycode": "^2.1.1",
     "material-ui": "^0.15.0-alpha.1",
@@ -107,7 +105,7 @@
     "redux-thunk": "^2.1.0"
   },
   "devEngines": {
-    "node": "4.x || 5.x",
+    "node": "4.x || 5.x || 6.x",
     "npm": "2.x || 3.x"
   }
 }
