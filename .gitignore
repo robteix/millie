@@ -1,3 +1,6 @@
+# stupid emacs
+*~
+
 # Logs
 logs
 *.log
@@ -30,6 +33,7 @@ node_modules
 .DS_Store
 
 # App packaged
+bundle
 dist
 release
 
@@ -38,3 +42,4 @@ app/img/app.iconset
 
 main.js.map
 npm-debug.log.*
+
