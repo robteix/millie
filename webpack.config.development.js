@@ -17,7 +17,7 @@ config.entry = [
   './app/index'
 ];
 
-config.output.publicPath = 'http://localhost:3000/dist/';
+config.output.publicPath = 'http://localhost:3000/bundle/';
 
 config.module.loaders.push({
   test: /\.global\.css$/,

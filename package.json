@@ -22,6 +22,22 @@
   "bin": {
     "electron": "./node_modules/.bin/electron"
   },
+  "build": {
+    "appId": "com.delightfulcode.millie",
+    "app-category-type": "blah",
+    "asar": true,
+    "win": {
+      "iconUrl": "https://raw.githubusercontent.com/robteix/millie/master/app/img/app.ico",
+      "loadingGif": "./app/img/heart.gif",
+      "msi": false
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!tools/**/*",
+      "!release/**/*"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robteix/millie.git"
@@ -56,6 +72,7 @@
     "cross-env": "^2.0.0",
     "css-loader": "^0.23.1",
     "del": "^2.0.1",
+    "electron-builder": "^5.23.2",
     "electron-packager": "^7.3.0",
     "electron-prebuilt": "^1.2.7",
     "electron-rebuild": "^1.0.0",

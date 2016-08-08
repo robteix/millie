@@ -30,7 +30,9 @@ node_modules
 .DS_Store
 
 # App packaged
+bundle
 dist
+generated
 release
 
 # iconset working dir
@@ -38,3 +40,4 @@ app/img/app.iconset
 
 main.js.map
 npm-debug.log.*
+*~
