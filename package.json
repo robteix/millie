@@ -88,6 +88,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "file-exists": "^2.0.0",
     "font-awesome": "^4.4.0",
+    "fs-extra": "^0.30.0",
     "keycode": "^2.1.1",
     "material-ui": "^0.15.0-alpha.1",
     "node-uuid": "^1.4.7",
