@@ -33,7 +33,7 @@ export default function millie(state = initialState, action) {
         };
         let services = [...state.services, service];
 
-        settings().set('services', services);
+        settings.set('services', services);
         return Object.assign({}, state, {
             services: services,
         });
@@ -41,7 +41,7 @@ export default function millie(state = initialState, action) {
         let delIndex = state.services.findIndex(x => x.id === action.service);
         if (delIndex === -1) return state;
         newServices =  [...state.services.slice(0, delIndex), ...state.services.slice(delIndex+1)];
-        settings().set('services', newServices);
+        settings.set('services', newServices);
         return Object.assign({}, state, {
             services: newServices,
         });
