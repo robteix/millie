@@ -6,7 +6,7 @@ Millie is a multiplatform, multiservice instant messaging client made with love.
 
 ## Install from Binaries
 
-Binary releases are [available here](https://github.com/robteix/millie/releases).
+Binary releases are [available here](https://github.com/robteix/millie/releases) for Windows, OSX, and Linux.
 
 ## Install from Sources
 
