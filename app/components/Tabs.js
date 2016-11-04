@@ -36,7 +36,7 @@ class Tabs extends Component {
 		                	<img width="24"
 		                		src={Services.service(s.type).icon} />
 		                </div>
-                        {s.title}
+                        {s.title || ' '}
                         <span style={{display:s.count>0?null:'none'}} className={styles.badge}>{s.count}</span></a></li>
 		            );
 		    	})}
