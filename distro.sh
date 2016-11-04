@@ -18,12 +18,12 @@ create_package() {
 }
 
 # max
-#create_package darwin x64 ./app/img/app.icns
-#create_package linux ia32 ./app/img/app.ico
-#create_package linux x64 ./app/img/app.ico
-#create_package win32 ia32 ./app/img/app.ico
-#create_package win32 x64 ./app/img/app.ico
-grunt create-windows-installer:ia32
-mv "$DISTDIR/MillieSetup.exe" "$DISTDIR/Millie-win32-ia32.exe"
-grunt create-windows-installer:x64
-mv "$DISTDIR/MillieSetup.exe" "$DISTDIR/Millie-win32-x64.exe"
+create_package darwin x64 ./app/img/app.icns
+create_package linux ia32 ./app/img/app.ico
+create_package linux x64 ./app/img/app.ico
+create_package win32 ia32 ./app/img/app.ico
+create_package win32 x64 ./app/img/app.ico
+#grunt create-windows-installer:ia32
+#mv "$DISTDIR/MillieSetup.exe" "$DISTDIR/Millie-win32-ia32.exe"
+#grunt create-windows-installer:x64
+#mv "$DISTDIR/MillieSetup.exe" "$DISTDIR/Millie-win32-x64.exe"
