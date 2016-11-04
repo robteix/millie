@@ -1,5 +1,6 @@
 import {
     ADD_SERVICE,
+    UPDATE_SERVICE,
     CLOSE_SERVICE_DIALOG,
     MENUS_UPDATED,
     DELETE_SERVICE,
@@ -33,15 +34,25 @@ export default function millie(state = initialState, action) {
         };
         let services = [...state.services, service];
 
-        settings().set('services', services);
+        settings.set('services', services);
         return Object.assign({}, state, {
             services: services,
         });
+    case UPDATE_SERVICE: {
+        let service = action.service;
+        let updIndex = state.services.findIndex(x => x.id === service.id);
+        if (updIndex === -1) return state;
+        newServices =  [...state.services.slice(0, updIndex), service, ...state.services.slice(updIndex+1)];
+        settings.set('service', newServices);
+        return Object.assign({}, state, {
+            services: newServices,
+        });
+    }
     case DELETE_SERVICE:
         let delIndex = state.services.findIndex(x => x.id === action.service);
         if (delIndex === -1) return state;
         newServices =  [...state.services.slice(0, delIndex), ...state.services.slice(delIndex+1)];
-        settings().set('services', newServices);
+        settings.set('services', newServices);
         return Object.assign({}, state, {
             services: newServices,
         });

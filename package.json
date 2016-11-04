@@ -93,6 +93,7 @@
     "selenium-webdriver": "^2.48.2",
     "sinon": "^1.17.2",
     "style-loader": "^0.13.0",
+    "typescript": "^1.8.10",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.9.0",

@@ -35,8 +35,13 @@ class SlackDialog extends Component {
         this.setState({titleError: titleError, teamError: teamError});
         if (titleError || teamError) return false;
 
-        console.log('OK!');
-        this.props.addService('slack', this.state.title.trim(), this.state.team);
+        if (this.state.id === undefined) {
+            this.props.addService('slack', this.state.title.trim(), this.state.team);
+        } else {
+            let newService = this.state;
+            newService.title = this.state.title.trim();
+            this.props.updateService(newService);
+        }
         return true;
     }
 

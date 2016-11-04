@@ -29,12 +29,14 @@ class TelegramDialog extends Component {
 
     validate() {
         this.setState({titleError: false});
-        if (this.state.title.trim() === '') {
-            this.setState({titleError: true});
-            return false;
-        }
 
-        this.props.addService('telegram', this.state.title.trim());
+        if (this.state.id === undefined) {
+            this.props.addService('telegram', this.state.title.trim());
+        } else {
+            let newService = this.state;
+            newService.title = this.state.title.trim();
+            this.props.updateService(newService);
+        }
         return true;
     }
 

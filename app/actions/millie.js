@@ -1,6 +1,7 @@
 import Services from '../utils/services';
 
 export const ADD_SERVICE = 'ADD_SERVICE';
+export const UPDATE_SERVICE = 'UPDATE_SERVICE';
 export const DELETE_SERVICE = 'DELETE_SERVICE';
 export const SELECT_SERVICE = 'SELECT_SERVICE';
 export const MENUS_UPDATED = 'MENUS_UPDATED';
@@ -25,6 +26,13 @@ export function addService(service, title, team = '') {
       team: team,
       count: 0,
     }
+  };
+}
+
+export function updateService(service) {
+  return {
+    type: UPDATE_SERVICE,
+    service: service,
   };
 }
 

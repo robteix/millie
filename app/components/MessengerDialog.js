@@ -29,12 +29,13 @@ class MessengerDialog extends Component {
 
     validate() {
         this.setState({titleError: false});
-        if (this.state.title.trim() === '') {
-            this.setState({titleError: true});
-            return false;
+        if (this.state.id === undefined) {
+            this.props.addService('messenger', this.state.title.trim());
+        } else {
+            let newService = this.state;
+            newService.title = this.state.title.trim();
+            this.props.updateService(newService);
         }
-
-        this.props.addService('messenger', this.state.title.trim());
         return true;
     }
 
