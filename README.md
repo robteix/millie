@@ -4,9 +4,11 @@ Millie is a multiplatform, multiservice instant messaging client made with love.
 
 ![](./millie.png)
 
-## Install
+## Install from Binaries
 
-Binary releases to be available shortly. Until then, you can compile the code.
+Binary releases are [available here](https://github.com/robteix/millie/releases) for Windows, OSX, and Linux.
+
+## Install from Sources
 
 First, clone the repository: 
 
@@ -44,7 +46,7 @@ and create a shortcut on your desktop.
 
 ## License
 
-Copyright © 2016 [Roberto Selbach Teixeira](https://robteix.com).
+Copyright © 2016 [Roberto Selbach Teixeira](https://www.robteix.com).
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
