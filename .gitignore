@@ -43,3 +43,4 @@ app/img/app.iconset
 
 main.js.map
 npm-debug.log.*
+.vscode
